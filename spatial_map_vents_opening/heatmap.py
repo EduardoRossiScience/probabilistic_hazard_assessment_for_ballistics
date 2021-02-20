@@ -45,7 +45,7 @@ from heatmap_weights import heatmap_data
 #################################################################################
 
 from matplotlib import pyplot as plt
-background = 'dem_esteso_quad.png'
+background = 'dem.png'
 show_grid_map(heatmap_data, background, 'best_guess.png')
 plt.savefig('/Users/silviamassaro/Documents/ARTICOLI_in_progresso/La_Soufrière_GBF/GBF_draft_/supplementary_material/spatial_map_vents_opening/map.eps',  format = 'eps')
 #change PATH accordingly to your folder
