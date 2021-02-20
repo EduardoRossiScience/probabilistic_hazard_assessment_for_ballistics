@@ -1,6 +1,6 @@
 # Probabilistic Hazard Assessment for Ballistics
-Silvia Massaro. Istituto Nazionale di Geofisica e Vulcanologia, Bologna, Italy. Email: silvia.massaro@ingv.it
-Eduardo Rossi. Univèrsite de Genève, Switzerland. Email: Eduardo.Rossi@unige.ch
+Silvia Massaro. Istituto Nazionale di Geofisica e Vulcanologia, Bologna, Italy. Email: silvia.massaro@ingv.it; 
+Eduardo Rossi. Universitè de Genève, Switzerland. Email: Eduardo.Rossi@unige.ch.
 
 ### PACKAGES CONTENT AND DESCRIPTION ###
 
@@ -24,9 +24,9 @@ The outputs return the best-guess probability map (in png and eps formats), the 
 
 
 - "probability_maps_GBF.m", in the "GBF_postprocessing_tool" folder. This script is built to reproduce the probability to exceed a given energy threshold E_t in each cell of the computational domain, considering La Soufrière de Guadeloupe case study. In particular, it is possible to plot two different types of maps in presence and absence of wind:
- 
-- a map showing the probability P' which defines the probability to exceed a given threshold E_t as a function of the number of VBPs fallen in the cell A_ij; 
-a map showing the overall probability P which combines the probability P' with the f_A_ij, which is the probability that a clast reaches that cell. 
+
+	- a map showing the probability P' which defines the probability to exceed a given threshold E_t as a function of the number of VBPs fallen in the cell A_ij; 
+	- a map showing the overall probability P which combines the probability P' with the f_A_ij, which is the probability that a clast reaches that cell. 
 
 For the sake of simplicity, a data structure is provided ("allData_11vents.mat") containing the whole set of simulations carried out with the Great Balls of Fire (GBF) model. The simulations are referred to 11 vents (10 vents located at the centre of the macroareas defined on the spatial probability map of vent opening, and 1 vent located at the centre of the dome). Each vent has a weight w'_k which derives from the sum of the probabilities of vent opening of the N_j cells of the finer vent-grid belonging to the considered macroarea. 
 
