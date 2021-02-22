@@ -1,13 +1,23 @@
 function probability_maps_GBF(allData, dem_X, dem_Y, dem_Z)
 
+% This function determines the probability maps as presented in the paper 
+% "Assessing hazard and potential impact associated with volcanic ballistic projectiles: 
+% the example of La Soufrière de Guadeloupe volcano (Lesser Antilles)"
+%
+% Input data: 
+% - allData: it is a structure with all the data obtained running GBF (Biass et al. 2016) 
+%            in different conditions
+% - dem_X, dem_Y, dem_Z: dem structure of the case under analysis
+ 
     close all;
     dim_vent = size(allData.bocca);
     mydata.N_vents = dim_vent(2);
-    mydata.n_clasti_tot = 2e6;
+    mydata.n_clasti_tot = 2e6;                                              % Number of clasts used in the simulations with GBF
     mydata.tabella_prototype = allData.bocca(1).nowind.soglia.table_prob;
     dim = size(mydata.tabella_prototype);
     mydata.id_matrix_i = dim(1);
     mydata.id_matrix_j = dim(2);
+    
     %Weights according to Strategy 1 (w'_j):
 %   mydata.weight_st1 = [0, 0.21, 0.25, 0.21, 0.33, 0, 0, 0, 0, 0, 0];
     mydata.weight_st1 = [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0];
@@ -201,7 +211,6 @@ function probability_maps_GBF(allData, dem_X, dem_Y, dem_Z)
            mydata.matrice_finale.nowind.stategia(1).soglia(2).table_prob_final(id_matrix_i, id_matrix_j) = somma_2_st1_nowind;
            mydata.matrice_finale.nowind.stategia(1).soglia(3).table_prob_final(id_matrix_i, id_matrix_j) = somma_3_st1_nowind;
            mydata.matrice_finale.nowind.stategia(1).N_clasti_media_pesata(id_matrix_i, id_matrix_j) = somma_Nclasti_st1_nowind;
-%          mydata.matrice_finale.nowind.stategia(1).N_clasti_media_pesata(id_matrix_i, id_matrix_j) = allData.bocca(1).nowind.soglia(1).table_N(id_matrix_i, id_matrix_j);
            
            mydata.matrice_finale.nowind.stategia(2).soglia(1).table_prob_final(id_matrix_i, id_matrix_j) = somma_1_st2_nowind;
            mydata.matrice_finale.nowind.stategia(2).soglia(2).table_prob_final(id_matrix_i, id_matrix_j) = somma_2_st2_nowind;
@@ -331,7 +340,6 @@ function drawFinalMaps_P_apex(mydata, output_prob, counts_total_single_cell, id_
     cmap(1,:)=aa(1,:); 
     cmap(2:end,:)=bb(2:end,:); 
     
-  
    figure(id_figure)
    hold on
    ax = subplot(1,1,1);
